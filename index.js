@@ -57,6 +57,7 @@ addItems();
 
 const createTaskBlock = document.querySelector(".create-task-block");
 createTaskBlock.addEventListener("submit", (event) => {
+    event.preventDefault();
     const textToAdd = event.target.taskName.value
     tasks.unshift({id: `${Date.now()}`, completed: false, text: textToAdd});
     tasksList.prepend(createItems(tasks[0].id, textToAdd));
